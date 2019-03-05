@@ -1,0 +1,16 @@
+{
+  "name": "gcb-to-k8s",
+  "version": "0.0.1",
+  "description": "Rolling update to kubernetes and send email on Google Cloud Build event is triggered, using Google Cloud Functions",
+  "main": "index.js",
+  "dependencies": {
+    "humanize-duration": "3.10.0",
+    "mailgun-js": "~0.11.2",
+    "kubernetes-client": "^6.9.0"
+  },
+  "devDependencies": {
+    "async": "^2.1.5",
+    "mocha": "3.2.0",
+    "should": "11.2.1"
+  }
+}
