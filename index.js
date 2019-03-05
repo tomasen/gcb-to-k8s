@@ -50,9 +50,8 @@ module.exports.rollingUpdateAndCreateEmail = async (build) => {
       const K8sConfig = require('kubernetes-client').config;
       const Client = require('kubernetes-client').Client
       const path = config.KUBE_CONFIG;
-      const config = K8sConfig.fromKubeconfig(path);
       try {
-        const client = new Client({ config: config, version: '1.9' });
+        const client = new Client({ config: K8sConfig.fromKubeconfig(path), version: '1.9' });
         const deployment = await client.apis.apps.v1.namespaces(config.KUBE_NAMESPACE)
           .deployments(config.KUBE_APPLABEL).get();
         console.log('Deployment: ', deployment);
