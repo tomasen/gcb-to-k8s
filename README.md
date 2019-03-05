@@ -1,17 +1,18 @@
 # gcb-to-k8s
 
-When your Cloud Build builds change states, you can trigger event about these changes to third-party services 
-and, by using this repo, initiating a rolling update to kubernetes.
+When your Cloud Build builds change states, it can trigger events about these changes 
+and initiating a rolling update to kubernetes.
 
 ## Continuous Deployment Practice
 
-1. Setup Google Cloud Build to build new container image, when github triggered event, and use short_commit_sha1 as container image's tag name. 
-2. Config and deploy this cloud function to initating rolling update to stage kubernetes cluster.
+1. Setup Google Cloud Build to build new container image, and use short_commit_sha1 as container image's tag name. 
+2. Config and deploy this cloud function to initating rolling update to stage kubernetes cluster, on new commits are pushed and built by Google Cloud Build.
 
 ## Costs
 
-This program uses billable components of Cloud Platform, including:
+This practice uses billable components of Google Cloud Platform, including:
 
+- Cloud Build
 - Cloud Functions
 - Cloud Pub/Sub
 
